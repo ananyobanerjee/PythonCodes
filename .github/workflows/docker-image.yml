@@ -16,6 +16,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build and Push the Docker image
       run: 
-        echo "${{ SECRETS.DOCKERPASSWORD }}" | docketlogin -u "ananyobanerjee" --password-stdin
+        echo "${{ SECRETS.DOCKERPASSWORD }}" | dockerlogin -u "ananyobanerjee" --password-stdin
         docker build ./Python -t ananyobanerjee/myrestapi
         docker push ananyobanerjee/myrestapi
